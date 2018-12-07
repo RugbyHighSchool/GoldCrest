@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  int tmp = map(analogRead(A0), 0, 1023, 0, sizeof(LEDArray) / 2); // convert analogRead from 0-1023 to the number of LEDs we have.
+  int tmp = map(analogRead(A0), 0, 1020, 0, sizeof(LEDArray) / 2); // convert analogRead from 0-1023 to the number of LEDs we have.
   if (debug) {
     Serial.print("Analog Value: ");
     Serial.print(analogRead(A0));
