@@ -14,7 +14,11 @@ void loop() {
   // put your main code here, to run repeatedly:
 //  Serial.println(analogRead(A0));
   int tmp = map(analogRead(A0), 0, 1023, 0, 7);
+  Serial.print("Analog Value: ");
+  Serial.print(analogRead(A0));
+  Serial.print(" Temp Value: ");
   Serial.println(tmp);
+  
   for (int j = 0; j < tmp; j++) {
     digitalWrite(LEDArray[j], HIGH);
   }
