@@ -7,21 +7,19 @@ void setup() {
   for(int i = 0; i < sizeof(LEDArray); i++) {
     pinMode(LEDArray[i], OUTPUT);
   }
-  
+  Serial.begin(9600);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  for(int j=0; j < sizeof(LEDArray); j++) {
+//  Serial.println(analogRead(A0));
+  int tmp = map(analogRead(A0), 0, 1023, 0, 7);
+  Serial.println(tmp);
+  for (int j = 0; j < tmp; j++) {
     digitalWrite(LEDArray[j], HIGH);
-    delay(500);
   }
-
-  delay(2000);
-
-  for(int k=0; k < sizeof(LEDArray); k++) {
-    digitalWrite(LEDArray[k], LOW);
-    delay(500);
+  delay(200);
+  for (int i = 0; i < sizeof(LEDArray); i++) {
+    digitalWrite(LEDArray[i], LOW);
   }
 }
- 
