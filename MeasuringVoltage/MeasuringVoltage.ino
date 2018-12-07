@@ -13,7 +13,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 //  Serial.println(analogRead(A0));
-  int tmp = map(analogRead(A0), 0, 1023, 0, sizeof(LEDArray));
+  int tmp = map(analogRead(A0), 0, 1023, 0, sizeof(LEDArray)/2);
   Serial.print("Analog Value: ");
   Serial.print(analogRead(A0));
   Serial.print(" Temp Value: ");
