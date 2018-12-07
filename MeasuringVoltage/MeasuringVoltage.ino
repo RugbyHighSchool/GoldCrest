@@ -25,7 +25,7 @@ void loop() {
     digitalWrite(LEDArray[j], HIGH);
   }
   delay(100);
-  for (int i = 0; i < sizeof(LEDArray); i++) {
+  for (int i = 0; i < sizeof(LEDArray)/2; i++) {
     digitalWrite(LEDArray[i], LOW);
   }
 }
