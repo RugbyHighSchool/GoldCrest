@@ -12,7 +12,6 @@ int PreviousLEDsOn[] = {};
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-
 void setup() {
   pinMode(A0, INPUT); // pin to measure the voltage
   for (int i = 0; i < sizeof(LEDArray); i++) {
