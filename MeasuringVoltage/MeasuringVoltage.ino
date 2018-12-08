@@ -7,6 +7,8 @@ const bool debug = true;
 
 int currentValue = 0;
 int previousValue = 0;
+int CurrentLEDsOn[] = {};
+int PreviousLEDsOn[] = {};
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
