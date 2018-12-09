@@ -2,19 +2,19 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-const int LEDArray[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
-const bool debug = true;
+const int LEDArray[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // contains all the PINs of the LEDs you want to use as your scale.
+const bool debug = true; // debug mode - probably leave this as false.
 
 int currentValue = 0;
 int previousValue = 0;
 int CurrentLEDsOn[] = {};
 int PreviousLEDsOn[] = {};
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+LiquidCrystal_I2C lcd(0x27, 16, 2); // initalise the LCD
 
 void setup() {
   pinMode(A0, INPUT); // pin to measure the voltage
-  for (int i = 0; i < sizeof(LEDArray); i++) {
+  for (int i = 0; i < sizeof(LEDArray); i++) { // turn all the LED
     pinMode(LEDArray[i], OUTPUT);
   }
   if (debug) {
