@@ -30,7 +30,7 @@ void loop() {
 
   if (currentValue != previousValue) {
     if (currentValue < previousValue) {
-      for (int i = 0; i < sizeof(LEDArray) / 2; i++) {
+      for (int i = sizeof(LEDArray) / 2; i >= currentValue; i--) {
         digitalWrite(LEDArray[i], LOW);
       }
     }
