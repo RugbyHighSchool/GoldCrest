@@ -22,7 +22,7 @@ void setup() {
   }
 
   lcd.begin();
-  lcd.print("Electroute RHS");
+  lcd.print("Electroroute");
 }
 
 void loop() {
