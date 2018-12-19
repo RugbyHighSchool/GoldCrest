@@ -24,6 +24,8 @@ void setup() {
 
   lcd.begin();
   lcd.print("Electroroute");
+  lcd.setCursor(0,1);
+  lcd.print("Voltage: ");
 }
 
 void loop() {
