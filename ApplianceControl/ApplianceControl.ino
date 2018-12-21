@@ -5,6 +5,9 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
+// Constants
+LiquidCrystal_I2C lcd(0x27, 16, 4); // initalise a 16 by 4 LCD
+
 void setup() {
   // put your setup code here, to run once:
 
