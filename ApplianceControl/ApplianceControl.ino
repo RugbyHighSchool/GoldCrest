@@ -12,8 +12,7 @@ const int bFridge = 2;
 const int gFridge = 3;
 
 void setup() {
-  // put your setup code here, to run once:
-
+  lcd.begin();
 }
 
 void loop() {
