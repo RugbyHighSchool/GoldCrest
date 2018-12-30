@@ -29,6 +29,10 @@ const int[] electrictyPrice = {
   2,1.5,-1.11,-1.11,-1.43,-1.43,1.69,2.53,5,9.5,25.14,27,35,38.52,44,44.49,39,38.28,34.11,34,34.5,34.5,36,35.82,35,35,35.12,34.42,29.99,29.8,36,40.62,39.64,39.89,48,48,50.8,50.65,52.5,52.65,56.5,55,50,47,46,44.5,34.79,32.79
 }
 
+const int[] electricityUsage = {
+
+
+}
 
 void setup() {
   lcd.begin();
@@ -42,4 +46,11 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
+
+}
+
+void controller(int input) {
+  if (input == 1) {
+    /* code */
+  }
 }
