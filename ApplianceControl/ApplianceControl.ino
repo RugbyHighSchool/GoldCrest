@@ -26,6 +26,11 @@ const int * appliances[] = {&bF, &bTV, &bDW, &bWM, &bWH, &gF, &gTV, &gDW, &gWM, 
 
 void setup() {
   lcd.begin();
+
+  for(int i = 0; i < sizeof(appliances); i++) { 
+    pinMode(appliances[i], OUTPUT); // turns the pin to output.
+    digitalWrite(appliances[i], LOW); // turns the led off
+  }
 }
 
 void loop() {
