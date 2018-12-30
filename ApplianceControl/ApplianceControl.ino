@@ -1,3 +1,4 @@
+
 // ApplianceControl
 // Written to be used on an Arduino Mega.
 
@@ -49,8 +50,12 @@ void loop() {
 
 }
 
-void controller(int input) {
-  if (input == 1) {
-    /* code */
+void controller(int input, bool good) {
+  if (good) {
+    if (input == 1) {
+      digitalWrite(gF, HIGH);
+    } else if(input == 2) {
+      digitalWrite(gTV, HIGH);
+    }
   }
 }
