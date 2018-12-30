@@ -28,11 +28,10 @@ def subsetsum(array,num):
                 return subsetsum(array[1:],num)
 
 def main():
-    compositeNumbers = subsetsum(numbers, 515)
+    compositeNumbers = subsetsum(numbers, 429)
     if compositeNumbers is not None:
         for pin in compositeNumbers:
-            print("Turning On Pin {}".format(pins[pin])
-
+            print("Turning On Pin {}".format(pins[pin]))
 
 if __name__ == '__main__':
     main()
