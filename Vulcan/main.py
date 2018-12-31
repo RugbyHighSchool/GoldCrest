@@ -3,9 +3,9 @@ pins = {
   # good appliances
   1: 2,
   2: 3,
-  4: 3,
-  8: 4,
-  16: 5,
+  4: 4,
+  8: 5,
+  16: 6,
   # bad appliances
   32: 10,
   64: 11,
