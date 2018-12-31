@@ -1,4 +1,4 @@
-numbers = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+pinAddresses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
 pins = {
   # good appliances
   1: 2,
@@ -43,7 +43,11 @@ def subsetsum(array,num):
                 return subsetsum(array[1:],num)
 
 def main():
-    compositeNumbers = subsetsum(numbers, 429)
+    print(pins.values())
+    for gpioPin in pins.values():
+
+
+    compositeNumbers = subsetsum(pinAddresses, 429)
     if compositeNumbers is not None:
         for pin in compositeNumbers:
             print("Turning On Pin {} which corresponds to {}".format(pins[pin], appliances[pins[pin]]))
