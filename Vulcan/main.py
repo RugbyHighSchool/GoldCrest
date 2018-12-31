@@ -14,6 +14,19 @@ pins = {
   512: 14
 }
 
+appliances = {
+    2: "Good Fridge"
+    3: "Good TV"
+    4: "Good Dishwasher"
+    5: "Good Washing Machine"
+    6: "Good Water Heater"
+    10: "Bad Fridge"
+    11: "Bad TV"
+    12: "Bad Dishwasher"
+    13: "Bad Washing Machine"
+    14: "Bad Water Heater"
+}
+
 def subsetsum(array,num):
     if num == 0 or num < 1:
         return None
