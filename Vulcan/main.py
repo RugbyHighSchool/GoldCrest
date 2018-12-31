@@ -15,15 +15,15 @@ pins = {
 }
 
 appliances = {
-    2: "Good Fridge"
-    3: "Good TV"
-    4: "Good Dishwasher"
-    5: "Good Washing Machine"
-    6: "Good Water Heater"
-    10: "Bad Fridge"
-    11: "Bad TV"
-    12: "Bad Dishwasher"
-    13: "Bad Washing Machine"
+    2: "Good Fridge",
+    3: "Good TV",
+    4: "Good Dishwasher",
+    5: "Good Washing Machine",
+    6: "Good Water Heater",
+    10: "Bad Fridge",
+    11: "Bad TV",
+    12: "Bad Dishwasher",
+    13: "Bad Washing Machine",
     14: "Bad Water Heater"
 }
 
@@ -46,7 +46,7 @@ def main():
     compositeNumbers = subsetsum(numbers, 429)
     if compositeNumbers is not None:
         for pin in compositeNumbers:
-            print("Turning On Pin {}".format(pins[pin]))
+            print("Turning On Pin {} which corresponds to {}".format(pins[pin], appliances[pins[pin]]))
 
 if __name__ == '__main__':
     main()
