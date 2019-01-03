@@ -42,6 +42,7 @@ def getElectricityPrice():
         print("That path exists")
     else:
         print("That path doesn't exist")
+        getElectricityPrice()
 
 
 
