@@ -1,29 +1,16 @@
-pins = {
-  # good appliances
-  1: 2,
-  2: 3,
-  4: 4,
-  8: 5,
-  16: 6,
-  # bad appliances
-  32: 10,
-  64: 11,
-  128: 12,
-  256: 13,
-  512: 14
-}
-
 appliances = {
-    2: "Good Fridge",
-    3: "Good TV",
-    4: "Good Dishwasher",
-    5: "Good Washing Machine",
-    6: "Good Water Heater",
-    10: "Bad Fridge",
-    11: "Bad TV",
-    12: "Bad Dishwasher",
-    13: "Bad Washing Machine",
-    14: "Bad Water Heater"
+  # Efficient appliances
+  1: [2, "Efficient Fridge"],
+  2: [3, "Efficient TV"],
+  4: [4, "Efficient Dishwasher"],
+  8: [5, "Efficient Washing Machine"],
+  16: [6, "Efficient Water Heater"],
+  # Inefficient appliances
+  32: [10, "Inefficient Fridge"],
+  64: [11, "Inefficient TV"],
+  128: [12, "Inefficient Dishwasher"],
+  256: [13, "Inefficient Washing Machine",
+  512: [14, "Inefficient Water Heater"]
 }
 
 electricityPrice = {
