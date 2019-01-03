@@ -37,7 +37,6 @@ def subsetsum(array,num):
                 return subsetsum(array[1:],num)
 
 def main():
-    getElectricityPrice()
     totalUsage = int(input("What is your usage sum address? "))
     if totalUsage <= getHighestSumAddress(appliances):
         addresses = subsetsum(list(appliances.keys()), totalUsage)
