@@ -36,16 +36,6 @@ def subsetsum(array,num):
             else:
                 return subsetsum(array[1:],num)
 
-def getElectricityPrice():
-    filePath = input("Enter the path of your csv file: ")
-    if os.path.isdir(filePath):
-        print("That path exists")
-    else:
-        print("That path doesn't exist")
-        getElectricityPrice()
-
-
-
 def main():
     getElectricityPrice()
     totalUsage = int(input("What is your usage sum address? "))
