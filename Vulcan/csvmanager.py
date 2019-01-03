@@ -12,4 +12,8 @@ class CSVParser:
             for row in self.csvfile:
                 self.dictionary[parser.parse(row[0])] = float(row[1])
 
+    def printDictionary(self):
+        for k, v in self.dictionary.items():
+            print("{} : {}".format(k, v))
+
 date = CSVParser('dateep.csv')
