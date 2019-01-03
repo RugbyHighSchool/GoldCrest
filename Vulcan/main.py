@@ -1,7 +1,7 @@
 import math
 import os
 
-appliances = {
+appliances = { # address, pin, description
   # Efficient appliances
   1: [2, "Efficient Fridge"],
   2: [3, "Efficient TV"],
