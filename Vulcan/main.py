@@ -53,7 +53,7 @@ def main():
     if totalUsage <= getHighestSumAddress(appliances):
         addresses = subsetsum(list(appliances.keys()), totalUsage)
         for pin in addresses:
-            print("Turning on Pin {} with Description {} with address {}".format(appliances[pin][0], appliances[pin][1], pin))
+            print("Turning on Pin {} with Description '{}' with address {}".format(appliances[pin][0], appliances[pin][1], pin))
     else:
         print("That sum address is invalid, the highest it can be is {}".format(getHighestSumAddress(appliances)))
         main()
