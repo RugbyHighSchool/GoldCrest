@@ -15,22 +15,9 @@ appliances = {
   512: [14, "Inefficient Water Heater"]
 }
 
-electricityPrice = {
-  "00:00": 2,
-  "00:30": 1.5,
-  '0100': -1.11,
-  "0130": -1.11,
-  "0200": -1.43,
-  "0230": -1.43,
-  "0300": 1.69,
-  "0330": 2.53,
-  "0400": 5
-
-}
-
 def getHighestSumAddress(dictionary):
-    highestAddress = sorted(dictionary.keys())[-1]
-    nextHighestAddress = math.pow(2, math.log2(highestAddress) + 1) - 1
+    highestAddress = sorted(dictionary.keys())[-1] # gets the highest current address
+    nextHighestAddress = math.pow(2, math.log2(highestAddress) + 1) - 1 #
     return nextHighestAddress
 
 def subsetsum(array,num):
