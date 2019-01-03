@@ -18,6 +18,3 @@ class CSVParser:
         return {
             min(self.dictionary, key = self.dictionary.get) : self.dictionary[min(self.dictionary, key = self.dictionary.get)]
         }
-
-alldata = CSVParser('alldata.csv')
-#alldata.printDictionary()
