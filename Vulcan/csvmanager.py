@@ -17,8 +17,9 @@ class CSVParser:
             print("{} : {}".format(k, v))
 
     def getLowestPrice(self):
-        return min(self.dictionary.values())
+        lowestValue = {}
+        lowestValue[min(self.dictionary, key = self.dictionary.get)] = self.dictionary[min(self.dictionary, key = self.dictionary.get)]
+        return lowestValue
 
-date = CSVParser('dateep.csv')
-date.printDictionary()
-print(date.getLowestPrice())
+alldata = CSVParser('alldata.csv')
+#alldata.printDictionary()
