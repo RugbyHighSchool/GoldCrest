@@ -1,3 +1,5 @@
+import math
+
 appliances = {
   # Efficient appliances
   1: [2, "Efficient Fridge"],
@@ -26,6 +28,11 @@ electricityPrice = {
 
 }
 
+def getHighestSumAddress(dictionary):
+    highestAddress = sorted(dictionary.keys())[-1]
+    nextHighestAddress = math.pow(2, math.log2(highestAddress) + 1) - 1
+    return nextHighestAddress
+
 def subsetsum(array,num):
     if num == 0 or num < 1:
         return None
@@ -42,10 +49,15 @@ def subsetsum(array,num):
                 return subsetsum(array[1:],num)
 
 def main():
-    totalUsage = input("What is your usage sum address? ")
-    addresses = subsetsum(list(appliances.keys()), int(totalUsage))
-    for pin in addresses:
-        print("Turning on Pin {} with Description {} with address {}".format(appliances[pin][0], appliances[pin][1], pin))
+    totalUsage = int(input("What is your usage sum address? "))
+    if totalUsage <= getHighestSumAddress(appliances):
+        addresses = subsetsum(list(appliances.keys()), totalUsage)
+        for pin in addresses:
+            print("Turning on Pin {} with Description {} with address {}".format(appliances[pin][0], appliances[pin][1], pin))
+    else:
+        print("That sum address is invalid, the highest it can be is {}".format(getHighestSumAddress(appliances))
+        main()
+
 
 if __name__ == '__main__':
     main()
