@@ -14,12 +14,12 @@ class CSVParser:
 
     def printDictionary(self):
         for k, v in self.dictionary.items():
-            print("{} : {}".format(k, v))
+            print("{} : {} (£/MWhr) : {} (Pence/KWhr)".format(k, v, v / 10))
 
     def getLowestPrice(self):
-        lowestValue = {}
-        lowestValue[min(self.dictionary, key = self.dictionary.get)] = self.dictionary[min(self.dictionary, key = self.dictionary.get)]
-        return lowestValue
+        return {
+            min(self.dictionary, key = self.dictionary.get) : self.dictionary[min(self.dictionary, key = self.dictionary.get)]
+        }
 
 alldata = CSVParser('alldata.csv')
 #alldata.printDictionary()
