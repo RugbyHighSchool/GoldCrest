@@ -16,6 +16,4 @@ class CSVParser:
 
     def getLowestPrice(self):
         lowest = min(self.dictionary, key = self.dictionary.get)
-        return {
-             lowest : self.dictionary[lowest]
-        }
+        return { lowest : self.dictionary[lowest] }
