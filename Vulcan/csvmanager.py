@@ -1,5 +1,5 @@
 import csv
-from datetime import time
+from datetime import time, datetime
 
 class CSVParser:
     def __init__(self, filepath):
