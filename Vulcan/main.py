@@ -17,7 +17,7 @@ appliances = {
 
 def getHighestSumAddress(dictionary):
     highestAddress = sorted(dictionary.keys())[-1] # gets the highest current address
-    nextHighestAddress = math.pow(2, math.log2(highestAddress) + 1) - 1 #
+    nextHighestAddress = math.pow(2, math.log2(highestAddress) + 1) - 1 # as the next highest address will be a power of 2 higher as that is how they sum.
     return nextHighestAddress
 
 def subsetsum(array,num):
