@@ -2,3 +2,4 @@
 .idea/
 
 playground.py
+__pycache__/
