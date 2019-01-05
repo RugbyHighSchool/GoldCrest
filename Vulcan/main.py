@@ -50,11 +50,12 @@ def main():
             leds[address] = LED(appliances.values()[0])
 
     while True:
-        for k, v in usageData.dictionary.items():
+        for timestamp, priceandusage in usageData.dictionary.items():
             if v[1] <= getHighestSumAddress(appliances):
-                pins = subsetsum(list(appliances.keys()), v[1])
-                for pin in pins:
-                    print("At time {} Turning on Pin {} which is {}".format(k, appliances[pin][0], appliances[pin][1]))
+                addresses = subsetsum(list(appliances.keys()), priceandusage[1])
+                for address in addresses:
+                    pin = appliances[address][0]
+                    print("At time {} Turning on Pin {} which is {}".format(timestamp, pin, appliances[address][1]))
                     # turn on the pin
                 time.sleep(2)
 
