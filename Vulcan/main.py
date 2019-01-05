@@ -3,6 +3,11 @@ from csvmanager import *
 from datetime import datetime
 import time
 
+debug = True # i.e. not on a rpi
+if not debug:
+    from gpiozero import LED
+    leds = []
+
 appliances = { # address, pin, description
   # Efficient appliances
   1: [2, "Efficient Fridge"],
@@ -40,6 +45,10 @@ def subsetsum(array,num):
 
 def main():
     usageData = DatePriceUsage('datawithusage.csv')
+    if not debug:
+        for pin in appliances.values():
+            leds.append(LED(pin[0]))
+
     while True:
         for k, v in usageData.dictionary.items():
             if v[1] <= getHighestSumAddress(appliances):
