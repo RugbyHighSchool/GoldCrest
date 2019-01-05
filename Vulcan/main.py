@@ -55,7 +55,7 @@ def main():
         for timestamp, priceandusage in usageData.dictionary.items():
             if priceandusage[1] <= getHighestSumAddress(appliances):
                 newAddresses = subsetsum(list(appliances.keys()), priceandusage[1])
-                print("Timestamp: {}".format(timestamp))
+                print("Timestamp: {}".format(timestamp.time()))
                 for address in set(newAddresses).difference(oldAddresses):
                     print("Turning on address: {}".format(address))
                     print("[ON]  Address: {}, Pin: {}, Description: {}".format(address, appliances[address][0], appliances[address][1]))
