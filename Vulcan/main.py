@@ -6,7 +6,7 @@ import time
 debug = True # i.e. not on a rpi
 if not debug:
     from gpiozero import LED
-    leds = []
+    leds = {}
 
 appliances = { # address, pin, description
   # Efficient appliances
@@ -46,8 +46,8 @@ def subsetsum(array,num):
 def main():
     usageData = DatePriceUsage('datawithusage.csv')
     if not debug:
-        for pin in appliances.values():
-            leds.append(LED(pin[0]))
+        for address in appliances.keys():
+            leds[address] = LED(appliances.values()[0])
 
     while True:
         for k, v in usageData.dictionary.items():
