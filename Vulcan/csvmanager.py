@@ -17,7 +17,7 @@ class CSVParser:
 
     def printDictionary(self):
         for k, v in self.dictionary.items():
-            print("{} : {} (£/MWhr) : {} (Pence/KWhr)".format(k, v, v / 10))
+            print("{} : {} (£/MWhr) : {} (Pence/KWhr)".format(k, v[0], v[0] / 10))
 
     def getLowestPrice(self):
         lowest = min(self.dictionary, key = self.dictionary.get)
