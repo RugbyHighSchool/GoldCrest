@@ -38,7 +38,7 @@ def subsetsum(array,num):
                 return subsetsum(array[1:],num)
 
 def main():
-    usageData = DateUsagePrice('datawithusage.csv')
+    usageData = DatePriceUsage('datawithusage.csv')
     while True:
         for k, v in usageData.dictionary.items():
             if v[1] <= getHighestSumAddress(appliances):
