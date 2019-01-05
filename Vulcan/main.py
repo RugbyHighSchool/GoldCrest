@@ -1,5 +1,6 @@
 import math
-import os
+from csvmanager import *
+from datetime import datetime
 
 appliances = { # address, pin, description
   # Efficient appliances
@@ -37,14 +38,13 @@ def subsetsum(array,num):
                 return subsetsum(array[1:],num)
 
 def main():
-    totalUsage = int(input("What is your usage sum address? "))
-    if totalUsage <= getHighestSumAddress(appliances):
-        addresses = subsetsum(list(appliances.keys()), totalUsage)
-        for pin in addresses:
-            print("Turning on Pin {} with Description '{}' with address {}".format(appliances[pin][0], appliances[pin][1], pin))
-    else:
-        print("That sum address is invalid, the highest it can be is {}".format(getHighestSumAddress(appliances)))
-        main()
+    usageData = DateUsagePrice('datawithusage.csv')
+    for k, v in usageData.dictionary.items():
+        if v[1] <= getHighestSumAddress(appliances):
+            pins = subsetsum(list(appliances.keys()), v[1])
+            for pin in pins:
+                print("At time {} Turning on Pin {}".format(k, appliances[pin][0]))
+                # turn on the pin
 
 
 if __name__ == '__main__':
