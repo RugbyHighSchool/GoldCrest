@@ -1,7 +1,7 @@
 import csv
 from datetime import datetime
 
-dateTimeParse = '%d/%m/%Y %H:%M:%S'
+dateTimeParse = '%H:%M:%S'
 
 class DatePrice:
     def __init__(self, filepath):
