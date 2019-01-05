@@ -54,8 +54,7 @@ def main():
             if v[1] <= getHighestSumAddress(appliances):
                 addresses = subsetsum(list(appliances.keys()), priceandusage[1])
                 for address in addresses:
-                    pin = appliances[address][0]
-                    print("At time {} Turning on Pin {} which is {}".format(timestamp, pin, appliances[address][1]))
+                    print("At time {} Turning on Pin {} which is {}".format(timestamp, appliances[address][0], appliances[address][1]))
                     # turn on the pin
                 time.sleep(2)
 
