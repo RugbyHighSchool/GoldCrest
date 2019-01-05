@@ -1,6 +1,7 @@
 import csv
-from dateutil import parser
 from datetime import datetime
+
+dateTimeParse = '%d/%m/%Y %H:%M:%S'
 
 class CSVParser:
     def __init__(self, filepath):
@@ -8,7 +9,7 @@ class CSVParser:
             self.dictionary = {}
             self.csvfile = csv.reader(file)
             for row in self.csvfile:
-                self.dictionary[parser.parse(row[0])] = float(row[1])
+                self.dictionary[datetime.strptime(row[0], dateTimeParse)] = float(row[1])
 
     def printDictionary(self):
         for k, v in self.dictionary.items():
