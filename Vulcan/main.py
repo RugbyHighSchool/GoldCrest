@@ -51,7 +51,7 @@ def main():
 
     while True:
         for timestamp, priceandusage in usageData.dictionary.items():
-            if v[1] <= getHighestSumAddress(appliances):
+            if priceandusage[1] <= getHighestSumAddress(appliances):
                 addresses = subsetsum(list(appliances.keys()), priceandusage[1])
                 for address in addresses:
                     print("At time {} Turning on Pin {} which is {}".format(timestamp, appliances[address][0], appliances[address][1]))
