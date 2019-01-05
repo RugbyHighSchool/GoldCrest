@@ -39,12 +39,13 @@ def subsetsum(array,num):
 
 def main():
     usageData = DateUsagePrice('datawithusage.csv')
-    for k, v in usageData.dictionary.items():
-        if v[1] <= getHighestSumAddress(appliances):
-            pins = subsetsum(list(appliances.keys()), v[1])
-            for pin in pins:
-                print("At time {} Turning on Pin {}".format(k, appliances[pin][0]))
-                # turn on the pin
+    while True:
+        for k, v in usageData.dictionary.items():
+            if v[1] <= getHighestSumAddress(appliances):
+                pins = subsetsum(list(appliances.keys()), v[1])
+                for pin in pins:
+                    print("At time {} Turning on Pin {}".format(k, appliances[pin][0]))
+                    # turn on the pin
 
 
 if __name__ == '__main__':
