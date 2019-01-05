@@ -9,7 +9,11 @@ class CSVParser:
             self.dictionary = {}
             self.csvfile = csv.reader(file)
             for row in self.csvfile:
-                self.dictionary[datetime.strptime(row[0], dateTimeParse)] = float(row[1])
+                if len(row) == 2: # Date and Price
+                    self.dictionary[datetime.strptime(row[0], dateTimeParse)] = float(row[1])
+
+                if len(row) == 3: # Date, Price and Usage
+                    self.dictionary[datetime.strptime(row[0], dateTimeParse)] = [float(row[1]), int(row[2])]
 
     def printDictionary(self):
         for k, v in self.dictionary.items():
