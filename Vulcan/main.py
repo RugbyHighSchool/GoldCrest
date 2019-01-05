@@ -56,6 +56,8 @@ def main():
                 for address in addresses:
                     print("At time {} Turning on Pin {} which is {}".format(timestamp, appliances[address][0], appliances[address][1]))
                     # turn on the pin
+                    if not debug:
+                        leds[address].on()
                 time.sleep(2)
 
 if __name__ == '__main__':
