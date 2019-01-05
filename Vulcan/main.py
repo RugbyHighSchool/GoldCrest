@@ -1,6 +1,7 @@
 import math
 from csvmanager import *
 from datetime import datetime
+import time
 
 appliances = { # address, pin, description
   # Efficient appliances
@@ -46,7 +47,7 @@ def main():
                 for pin in pins:
                     print("At time {} Turning on Pin {} which is {}".format(k, appliances[pin][0], appliances[pin][1]))
                     # turn on the pin
-
+                time.sleep(2)
 
 if __name__ == '__main__':
     main()
