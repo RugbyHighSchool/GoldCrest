@@ -58,17 +58,19 @@ def main():
                 print("Timestamp: {}".format(timestamp))
                 for address in set(newAddresses).difference(oldAddresses):
                     print("Turning on address: {}".format(address))
+                    print("[ON]  Address: {}, Pin: {}, Description: {}".format(address, appliances[address][0], appliances[address][1]))
                     # turn on the pin
                     if not debug:
                         leds[address].on()
 
                 for address in set(oldAddresses).difference(newAddresses):
-                    print("Turning off address: {}".format(address))
+                    print("[OFF] Address: {}, Pin: {}, Description: {}".format(address, appliances[address][0], appliances[address][1]))
+
                     # turn off the pin
                     if not debug:
                         leds[address].off()
-                        
-                time.sleep(2)
+
+                time.sleep(3)
 
             oldAddresses = newAddresses
 
