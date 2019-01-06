@@ -8,7 +8,7 @@ if not debug:
     from gpiozero import LED
     leds = {}
 
-appliances = { # address, pin, description
+appliances = { # address: [pin, description]
   # Efficient appliances
   1: [2, "Efficient Fridge"],
   2: [3, "Efficient TV"],
