@@ -42,7 +42,7 @@ class History(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument("history")
         args = parser.parse_args()
-        print(args["history"])
+        return args["history"], 200;
 
 api.add_resource(Price, "/price/<int:timestamp>")
 api.add_resource(Prices, "/prices")
