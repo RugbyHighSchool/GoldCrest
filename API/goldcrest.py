@@ -19,15 +19,6 @@ class Price(Resource):
             return {
                 "datetime": datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S'),
                 "current_price" : energyUsage[timestamp],
-                "last_price" : energyUsage[timestamp - 1800],
-                "history" : [
-                    energyUsage[timestamp - (30*60)],
-                    energyUsage[timestamp - (60*60)],
-                    energyUsage[timestamp - (90*60)],
-                    energyUsage[timestamp - (120*60)],
-                    energyUsage[timestamp - (150*60)]
-                ],
-                "change_in_price": energyUsage[timestamp] - energyUsage[timestamp - 1800]
             }, 200
         else:
             return "Timestamp Not Found; Check you are in Unix Time.", 404
@@ -40,9 +31,19 @@ class Prices(Resource):
 class History(Resource):
     def get(self, timestamp):
         parser = reqparse.RequestParser()
-        parser.add_argument("history")
+        parser.add_argument("histories")
         args = parser.parse_args()
-        return args["history"], 200;
+
+        history = []
+
+        for i in range(1, int(args["histories"])):
+            history.append(energyUsage[timestamp - (i * 30 * 60)])
+
+        return {
+            "datetime": datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S'),
+            "current_price" : energyUsage[timestamp],
+            "history": history
+        }, 200
 
 api.add_resource(Price, "/price/<int:timestamp>")
 api.add_resource(Prices, "/prices")
