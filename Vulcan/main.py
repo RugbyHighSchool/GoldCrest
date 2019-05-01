@@ -57,7 +57,6 @@ def main():
                 newAddresses = subsetsum(list(appliances.keys()), priceandusage[1])
                 print("Timestamp: {}".format(timestamp.time()))
                 for address in set(newAddresses).difference(oldAddresses):
-                    print("Turning on address: {}".format(address))
                     print("[ON]  Address: {}, Pin: {}, Description: {}".format(address, appliances[address][0], appliances[address][1]))
                     # turn on the pin
                     if not debug:
