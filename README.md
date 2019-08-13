@@ -1,4 +1,5 @@
 # Gold Crest
+The programming code behind the Rugby High School Gold Crest Group working with Electroroute. It did achieve both the Gold Crest, and EDT award.
 ## API
 A simple flask application that parses data from a CSV, and then makes them available through an API.  
 - [ ] Create script to push to production.
